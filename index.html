@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <script>
+            function computerPlay() {
+                let plays = ["scissors","rock","paper"];
+                return (plays[Math.floor(Math.random() * Math.floor(3))]);
+            }
+            
+            
+
+            function playRound(playerSel, computerSel) {
+                let plays = ["scissors","rock","paper"];
+                playerSel = playerSel.toLowerCase();
+
+                if (plays.indexOf(playerSel) == -1) {
+                    return("Invalid Entry!");
+                }
+                else if (plays.indexOf(playerSel) == plays.indexOf(computerSel)) {
+                    return("Tie!");
+                }
+                else if((playerSel == "paper" && computerSel == "scissors") || plays.indexOf(playerSel) < plays.indexOf(computerSel)){
+                    return("You Lose! " + computerSel.toString() + " beats " + playerSel.toString());
+                }
+                else { 
+                    return("You win! " + playerSel.toString() + " beats " + computerSel.toString());
+                }
+
+            }
+
+            function game(rounds) {
+                let playerScore = 0;
+                let computerScore = 0;
+                
+
+                for (let i = 0; i < rounds; i++){
+                    
+                    let playerSelection = prompt("Type in Rock,Paper or Scissors!");
+                    let cP = computerPlay();
+                    let round = playRound(playerSelection, cP);
+                    console.log(round);
+
+                    if (round == "You win! " + playerSelection.toString() + " beats " + cP.toString()) {  
+                        playerScore ++ ;
+                    }
+                    else if (playerSelection == cP || round == "Invalid Entry!"){
+                        i --;
+                    }
+                    else { 
+                        computerScore ++;
+                    }
+                    console.log();
+                }
+                if (playerScore > computerScore) {
+                    return("You Win Smarty or Lucky whichever way you feel today but remember my kind will rule you > 8 {")
+                }
+                else {
+                    return("You Lose PC MASTER RACE FOREVER HAHA..... HAHA > 8 D")
+                }
+            }
+            
+            console.log(game(5));
+        </script>
+    </body>
+</html>
