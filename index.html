@@ -1,65 +1,36 @@
 <!DOCTYPE html>
+<head>
+    <meta charset = "UTF-8">
+    <title>Rock Paper Scissors</title>
+    <link rel ="stylesheet" href="style.css">
+</head>
+
 <html>
-    <body>
-        <script>
-            function computerPlay() {
-                let plays = ["scissors","rock","paper"];
-                return (plays[Math.floor(Math.random() * Math.floor(3))]);
-            }
-            
-            
+<body>
+    <div class = "heading">
+        <h1>
+            ROCK PAPER SCISSORS
+        </h1>
+        
+        <h2 id = "description">
+            Make Your Play!
+        </h2>
+    </div>
 
-            function playRound(playerSel, computerSel) {
-                let plays = ["scissors","rock","paper"];
-                playerSel = playerSel.toLowerCase();
+    <div class = "buttons">
 
-                if (plays.indexOf(playerSel) == -1) {
-                    return("Invalid Entry!");
-                }
-                else if (plays.indexOf(playerSel) == plays.indexOf(computerSel)) {
-                    return("Tie!");
-                }
-                else if((playerSel == "paper" && computerSel == "scissors") || plays.indexOf(playerSel) < plays.indexOf(computerSel)){
-                    return("You Lose! " + computerSel.toString() + " beats " + playerSel.toString());
-                }
-                else { 
-                    return("You win! " + playerSel.toString() + " beats " + computerSel.toString());
-                }
+        <button value="rock"><img src ="pics/rock.png"></button>
+        <button value="paper"><img src ="pics/stack-of-paper-outline.png"></button>
+        <button value="scissors"><img src ="pics/scissors.png"></button>
+        
+    </div>
+    <div class="points">
+         
+        <p>Your Score: <p id ="player">0</p></p>
+        <p>Pc Score:<p  id ="computer">0</p></p>
 
-            }
-
-            function game(rounds) {
-                let playerScore = 0;
-                let computerScore = 0;
-                
-
-                for (let i = 0; i < rounds; i++){
-                    
-                    let playerSelection = prompt("Type in Rock,Paper or Scissors!");
-                    let cP = computerPlay();
-                    let round = playRound(playerSelection, cP);
-                    console.log(round);
-
-                    if (round == "You win! " + playerSelection.toString() + " beats " + cP.toString()) {  
-                        playerScore ++ ;
-                    }
-                    else if (playerSelection == cP || round == "Invalid Entry!"){
-                        i --;
-                    }
-                    else { 
-                        computerScore ++;
-                    }
-                    console.log();
-                }
-                if (playerScore > computerScore) {
-                    return("You Win Smarty or Lucky whichever way you feel today but remember my kind will rule you > 8 {")
-                }
-                else {
-                    return("You Lose PC MASTER RACE FOREVER HAHA..... HAHA > 8 D")
-                }
-            }
-            
-            console.log(game(5));
-        </script>
-    </body>
+    </div>
+</body>
+<script src = "script.js">
+</script>
 </html>

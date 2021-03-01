@@ -1,0 +1,45 @@
+body {
+    font-family: sans-serif;
+    background-color: green;
+}
+
+.heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.buttons {
+    display: flex;
+    flex: 1;
+    min-height: 50vh;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-between;
+    margin: 80px 170px;
+}
+
+.buttons button{
+    background-color: green;
+    border: transparent;
+
+}
+
+.buttons button img {
+    max-width: 224px;
+    margin: 30px;
+}
+
+.points {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    margin: 80px 170px;
+}
+
+.points p{
+    margin: 30px;
+    font-size:50px;
+}
